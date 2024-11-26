@@ -1,0 +1,19 @@
+
+// // .homeButton:hover::after {
+// //     content: "Home";
+// // }
+// .homeButton::after {
+//     content: "Home";
+//     position: absolute;
+//     top: 0;
+//     right: 100%; /* Initially hidden to the right */
+//     transform: translateX(100%); /* For the sliding animation */
+//     background-color: rgba(0, 0, 0, 0.1); /* Subtle background for the text */
+//     padding: 0.5em 1em; /* Adjust padding as needed */
+//     border-radius: 0.25em; /* Rounded corners */
+//     transition: transform 0.3s ease-in-out; /* Smooth animation */
+//     white-space: nowrap;  /* Prevents the text from wrapping */
+// }
+// .homeButton:hover::after {
+//     transform: translateX(-100%); /* Slides the text into view */
+//  }

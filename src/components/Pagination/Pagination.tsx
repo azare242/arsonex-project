@@ -35,9 +35,9 @@ export function PaginationC({ totalPages, pageLink }: Props) {
 
     if (endPage - startPage < 4) {
         if (startPage === 1) {
-            endPage = Math.min(totalPages, startPage + 4);
+            endPage = Math.min(totalPages, startPage + 2);
         } else {
-            startPage = Math.max(1, endPage - 4);
+            startPage = Math.max(1, endPage - 2);
         }
     }
 

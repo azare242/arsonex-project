@@ -40,9 +40,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="gap-4  items-center justify-center rounded-xl flex flex-row p-3 m-1 mt-2 backdrop-blur-sm bg-gray-700/30 dark:bg-gray-700/30 border ">
-            <Bitcoin size={40} className=" transition-colors hover:text-slate-500 dark:hover:text-gray-800 p-1 rounded-full border dark:bg-white dark:text-black bg-black text-white" />
-            <Link href="/" className={`flex flex-row cursor-pointer transition-colors dark:hover:text-gray-300 hover:text-slate-500 `}><HomeIcon/></Link>
+          <header className="gap-4  items-center justify-center rounded-xl flex flex-row p-3 m-1 mt-2 backdrop-blur-sm bg-gray-700/30  border ">
+            <Bitcoin size={40} className=" transition-colors hover:text-slate-500  p-1 rounded-full border  bg-black text-white" />
+            <Link href="/" className={`flex flex-row cursor-pointer transition-colors  hover:text-slate-500 `}><HomeIcon/></Link>
             <div className="ml-auto">
               <ModeToggle/>
 

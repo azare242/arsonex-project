@@ -3,7 +3,7 @@ import { Skeleton } from '../ui/skeleton'
 
 const PaginationLoading = () => {
   return (
-    <Skeleton className='w-[300px] h-[200px]'/>
+    <Skeleton className='w-full h-[50px] absolute bottom-1 '/>
 
 
   )

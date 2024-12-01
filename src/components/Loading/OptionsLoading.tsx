@@ -3,7 +3,7 @@ import { Skeleton } from '../ui/skeleton'
 
 const OptionsLoading = () => {
   return (
-    <Skeleton className='w-[300px] h-[200px]'/>
+    <Skeleton className='w-full h-[20px] my-2'/>
     )
 }
 

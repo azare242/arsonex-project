@@ -1,13 +1,13 @@
 'use server'
 import { CryptoDataList } from "@/types/dataTable";
 
-export async function dataFetch (page: number): Promise<CryptoDataList | {error: string}> {
+export async function dataFetch (page: number): Promise<CryptoDataList | null> {
 
 
     const url = process.env.CoinGecko
     // const apiKey = process.env.CoinGeckoAPIKEY
     if (!url) {
-        return {error: "NO URL FOR DATA FETCH"}
+        return null
     }
 
     const rawResult = await fetch(
@@ -22,7 +22,8 @@ export async function dataFetch (page: number): Promise<CryptoDataList | {error:
 
     if (!rawResult.ok) {
         const error = await rawResult.json()
-        return {error: JSON.stringify(error)}
+        console.log(error)
+        return null
     }
 
     const result = await rawResult.json()

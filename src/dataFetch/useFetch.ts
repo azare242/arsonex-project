@@ -2,7 +2,7 @@ import { CryptoDataList } from "@/types/dataTable"
 import { useEffect, useState } from "react"
 import { fetchC } from "./mock"
 
-export const useFetch = (page: number) => {
+export const useFetch = (page: number, mc: string, search: string) => {
 
 
     const [data, setData] = useState<CryptoDataList | null>(null)
@@ -11,7 +11,7 @@ export const useFetch = (page: number) => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetchC(page)
+            const res = await fetchC(page, mc, search)
 
             console.log(res)
             setData(res)

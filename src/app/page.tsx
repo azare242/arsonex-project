@@ -2,14 +2,16 @@
 'use client'
 import DataTablePage from "@/components/Pages/Main"
 import dynamic from "next/dynamic"
+import { useSearchParams } from "next/navigation"
 import { useState } from "react"
 
 const NoSSRFilters = dynamic(() => import('@/components/Filters'), { ssr: false })
 const NoSSRSearch = dynamic(() => import("@/components/Search"), {ssr: false})
 const MainPage = () => {
 
-  const [filter, setFilter] = useState<string>("All")
-  const [search, setSearch] = useState<string>("")
+  const query = useSearchParams()
+  const [filter, setFilter] = useState<string>(query.get("market_cap") ?? "All")
+  const [search, setSearch] = useState<string>(query.get("search") ?? "")
   return (
     <div className="flex flex-col">
 

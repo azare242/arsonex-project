@@ -16,18 +16,18 @@ interface Props {
 }
 
 
-export function PaginationC({ totalPages, pageLink }: Props) {
+export function PaginationC({ totalPages }: Props) {
     const searchParams = useSearchParams();
     const currentPage = parseInt(searchParams.get('page') ?? "1") || 1;
 
     const buildPageLink = (page: number) => {
-        if (pageLink) {
-            return `${pageLink}?page=${page}`;
-        } else {
-            const params = new URLSearchParams(searchParams);
-            params.set('page', `${page}`);
-            return `?${params.toString()}`;
-        }
+        const market_cap = searchParams.get("market_cap")
+        const search = searchParams.get("search")
+        const qry = []
+        if (market_cap) qry.push("market_cap="+market_cap)
+        if (search) qry.push("search="+search)
+        qry.push("page="+page)
+        return `?${qry.join("&")}`
     };
 
     let startPage = Math.max(1, currentPage - 2);

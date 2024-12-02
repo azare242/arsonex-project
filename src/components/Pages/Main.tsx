@@ -11,7 +11,10 @@ import TableLoading from '../Loading/TableLoading'
 
 const DataTablePage = () => {
     const query = useSearchParams()
-    const { loading, data } = useFetch(parseInt(query.get("page") ?? "1"))
+    const market_cap = query.get("market_cap")
+    const search = query.get("search")
+    const { loading, data } = useFetch(parseInt(query.get("page") ?? "1"), market_cap ?? "" , search ?? "")
+    
     if (loading) {
         return (
             <>
@@ -22,8 +25,8 @@ const DataTablePage = () => {
     }
     return (
         <div className='flex flex-col  px-4 my-2 w-full'>
-            <DataTable columns={CryptoColumns} data={data ?? []} />
-            <PaginationC totalPages={10} pageLink='/' />
+            <DataTable columns={CryptoColumns} data={data ?? []}/>
+            <PaginationC totalPages={10} />
         </div>
     )
 }

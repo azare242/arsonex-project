@@ -1,25 +1,16 @@
-import { CryptoDataList } from "@/types/dataTable"
-import { useEffect, useState } from "react"
-import { fetchC } from "./mock"
+import { useQuery } from '@tanstack/react-query';
+import { fetchC } from './mock';
+import { CryptoDataList } from '@/types/dataTable';
 
 export const useFetch = (page: number, mc: string, search: string) => {
+  const { data, isLoading, error } = useQuery<CryptoDataList>({
+    queryKey: ['cryptoData', page, mc, search],
+    queryFn: async () => {
+      const response = await fetchC(page, mc, search);
+      return response;
+    },
+    // keepPreviousData: true,
+  });
 
-
-    const [data, setData] = useState<CryptoDataList | null>(null)
-    const [loading, setLoading] = useState<boolean>(true)
-
-
-    useEffect(() => {
-        (async () => {
-            const res = await fetchC(page, mc, search)
-
-            console.log(res)
-            setData(res)
-            setLoading(false)
-            
-        })
-        ()
-    }, [page])
-
-    return {loading, data}
-}
+  return { loading: isLoading, data, error };
+};

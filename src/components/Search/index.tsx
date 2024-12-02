@@ -13,10 +13,10 @@ const Search = ({ onChange, searched }: any) => {
   const handleSearch = () => {
     // console.log(searched); // For now, just log the searched value
     const qry = []
-    const page = query.get("page")
-    if (page) {
-      qry.push("page="+page)
-    }
+    // const page = query.get("page")
+    // if (page) {
+    //   qry.push("page="+page)
+    // }
     const market_cap = query.get("market_cap")
     if (market_cap) {
       qry.push("market_cap="+market_cap)

@@ -31,7 +31,7 @@ export const CryptoColumns: ColumnDef<CryptoData>[] = [
             <Button
                 variant="ghost"
                 onClick={() => column.toggleSorting(
-                    false
+                    column.getIsSorted() === "asc"
                 )}
             >
               Price
@@ -46,7 +46,9 @@ export const CryptoColumns: ColumnDef<CryptoData>[] = [
         header: ({ column }) => (
             <Button
                 variant="ghost"
-                onClick={() => column.toggleSorting()}
+                onClick={() => column.toggleSorting(
+                    column.getIsSorted() === "asc"
+                )}
             >
               24hPrice Change (%)
               <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -59,7 +61,11 @@ export const CryptoColumns: ColumnDef<CryptoData>[] = [
         header: ({ column }) => (
             <Button
                 variant="ghost"
-                onClick={() => column.toggleSorting(false)}
+                onClick={() => column.toggleSorting(
+
+                    column.getIsSorted() === "asc"
+
+                )}
             >
               Market Cap ($)
               <ArrowUpDown className="ml-2 h-4 w-4" />

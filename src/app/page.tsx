@@ -24,7 +24,7 @@ const MainPage = () => {
 
       <div className="flex flex-col">
 
-        <div className="ml-2 mr-2 flex flex-row items-end justify-end gap-4">
+        <div className="ml-2 mr-2 flex md:flex-row flex-col md:items-end justify-end gap-4">
           <NoSSRSearch onChange={setSearch} searched={search} />
           <NoSSRFilters onChange={setFilter} currentSelect={filter} />
         </div>

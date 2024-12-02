@@ -26,7 +26,9 @@ const DataTablePage = () => {
     return (
         <div className='flex flex-col  px-4 my-2 w-full'>
             <DataTable columns={CryptoColumns} data={data ?? []}/>
+            <section className=''>
             <PaginationC totalPages={10} />
+            </section>
         </div>
     )
 }

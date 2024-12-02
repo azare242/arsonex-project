@@ -7,7 +7,7 @@ import { Button } from "../ui/button"
 export const CryptoColumns: ColumnDef<CryptoData>[] = [
     {
         accessorKey: "image",
-        header: "",
+        header: "icon",
         cell: ({ row }) => (
             <Image
                 src={row.original.image}

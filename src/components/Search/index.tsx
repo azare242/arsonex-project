@@ -27,7 +27,11 @@ const Search = ({ onChange, searched }: any) => {
 
 
   };
-
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
   const handleClear = () => {
     onChange(''); // Clear the search input
     const qry = []
@@ -50,6 +54,7 @@ const Search = ({ onChange, searched }: any) => {
         placeholder="Search By Name Or Symbol..."
         onChange={(e) => onChange(e.target.value)}
         className="pl-10" // Add padding to the left for the icon
+        onKeyDown={handleKeyDown}
       />
       {/* Search Icon */}
       <button

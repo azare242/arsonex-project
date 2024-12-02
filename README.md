@@ -1,4 +1,3 @@
-
 # Arsonex Project
 
 This project is developed using Next.js, Tailwind CSS, Radix UI, React Query, and Context API to display a table of cryptocurrency prices. The data is updated in real-time and includes filtering by market cap and searching by symbol or cryptocurrency name.
@@ -47,7 +46,29 @@ Follow these steps to install and run the project:
 5. The project will be accessible in the browser at:
 
    ```
-   http://localhost:3000
+   http://localhost:6299
+   ```
+
+## Building and Running the Production Server
+
+To build the project and run it in a production environment, use the following commands:
+
+1. Build the application:
+
+   ```bash
+   pnpm build
+   ```
+
+2. Start the production server:
+
+   ```bash
+   pnpm start
+   ```
+
+3. The production server will be accessible in the browser at:
+
+   ```
+   http://localhost:7299
    ```
 
 ## Features
@@ -55,3 +76,4 @@ Follow these steps to install and run the project:
 - **Live Cryptocurrency Prices**: Prices are updated in real-time.
 - **Filter by Market Cap**: Display cryptocurrencies based on their market capitalization.
 - **Search by Symbol or Name**: Fast and easy search functionality through the search bar.
+

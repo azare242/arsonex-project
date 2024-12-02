@@ -1,7 +1,7 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
-import { useRouter, useSearchParams } from 'next/navigation';
+import {  useSearchParams } from 'next/navigation';
 import React from 'react';
 
 const MarketCapSelect = ({ onChange, currentSelect }: any) => {
@@ -12,7 +12,7 @@ const MarketCapSelect = ({ onChange, currentSelect }: any) => {
     { label: '> $10B', value: 'over_10B' },
   ];
 
-  const {push} = useRouter()
+  // const {push} = useRouter()
   
   const query = useSearchParams()
   const handleChange = (e: any) => {

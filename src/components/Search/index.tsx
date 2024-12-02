@@ -3,7 +3,7 @@
 import React from 'react'
 import { Input } from '../ui/input'
 import { Search as SearchIcon, X as ClearIcon } from 'lucide-react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import {  useSearchParams } from 'next/navigation'
 
 const Search = ({ onChange, searched }: any) => {
 
